@@ -1,5 +1,7 @@
 package fr.uphf.etu.flotte;
 
+import fr.uphf.etu.structure.Topologie;
+
 /**
  *
  * Classe Java pour lancer des tests
@@ -45,5 +47,8 @@ public class Main {
         flotte.lireFlotte("src\\main\\resources\\1_flotte.txt");
         flotte.afficherFlotte();
 
+        Topologie topologie = new Topologie();
+        topologie.lireTopologie("src\\main\\resources\\1_topologie.txt");
+        topologie.afficherTopologie();
     }
 }

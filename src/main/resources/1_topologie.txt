@@ -1,5 +1,6 @@
 Noeud	Liste
-A	B
-B	C D
+B	B
+A	C D
 C	B
 D	B
+Z	A B

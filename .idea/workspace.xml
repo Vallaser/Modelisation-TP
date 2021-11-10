@@ -5,22 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fdd88efc-c49f-4eca-b589-e82dd3326522" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/uphf/etu/structure/Noeud.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/uphf/etu/structure/Bateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/uphf/etu/flotte/Bateau.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/uphf/etu/structure/Camion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/uphf/etu/flotte/Camion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/uphf/etu/structure/Flotte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/uphf/etu/flotte/Flotte.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/uphf/etu/structure/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/uphf/etu/flotte/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/uphf/etu/structure/Train.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/uphf/etu/flotte/Train.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/uphf/etu/structure/Transport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/uphf/etu/flotte/Transport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/1_demandes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/1_demandes.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/1_flotte.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/1_flotte.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/1_services.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/1_services.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/uphf/etu/flotte/Flotte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/uphf/etu/flotte/Flotte.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/uphf/etu/flotte/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/uphf/etu/flotte/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/uphf/etu/structure/Noeud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/uphf/etu/structure/Noeud.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/uphf/etu/structure/Topologie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/uphf/etu/structure/Topologie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/1_topologie.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/1_topologie.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -137,15 +126,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -217,7 +204,8 @@
       <workItem from="1636392381322" duration="6087000" />
       <workItem from="1636398832907" duration="3606000" />
       <workItem from="1636461723200" duration="8966000" />
-      <workItem from="1636531814842" duration="4227000" />
+      <workItem from="1636531814842" duration="8554000" />
+      <workItem from="1636544718120" duration="3055000" />
     </task>
     <servers />
   </component>

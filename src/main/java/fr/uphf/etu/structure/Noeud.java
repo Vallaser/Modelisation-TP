@@ -12,8 +12,8 @@ import java.util.List;
  *
  **/
 public class Noeud {
-    public char lettre;
-    public List<Noeud> liens;
+    private char lettre;
+    private List<Noeud> liens;
 
     /**
      * Constructeur sans paramètres
@@ -46,6 +46,14 @@ public class Noeud {
     }
 
     /**
+     * Modifie la liste des liens
+     * @param liens vers les noeuds
+     */
+    public void setLiens(List<Noeud> liens) {
+        this.liens = liens;
+    }
+
+    /**
      * Retourne la lettre qui symbolise ce noeud
      *
      * @return la lettre qui symbolise ce noeud
@@ -61,5 +69,23 @@ public class Noeud {
      */
     public List<Noeud> getLiens() {
         return liens;
+    }
+
+    /**
+     * Affiche la lettre symbolisant le noeud
+     */
+    public void afficherLettre() {
+        System.out.print("Lettre : " + this.lettre);
+    }
+
+
+    /**
+     * Affiche les liens du noeud
+     */
+    public void afficherLiens(){
+        System.out.print("Liens : ");
+        liens.forEach(
+                l -> System.out.print(l.getLettre() + " ")
+        );
     }
 }

@@ -166,6 +166,7 @@ public class Flotte {
     }
 
     public void afficherFlotte() {
+        System.out.println("Id\tType");
         flotte.forEach(
             f -> {
                 if(f.getClass().getSimpleName().equals("Camion"))
