@@ -1,4 +1,4 @@
-package fr.uphf.etu.structure;
+package fr.uphf.etu.flotte;
 
 
 /**
@@ -13,11 +13,16 @@ package fr.uphf.etu.structure;
 public class Bateau extends Transport {
 
     /**
-     * Constructor à une entrée
-     * @param taille surface du transport en m³
+     * Constructeur vide
      */
-    public Bateau(int taille) {
-        super(taille);
+    public Bateau() { super(); }
+
+    /**
+     * Constructor à une entrée
+     * @param idTransport identifiant de ce train parmi les transports
+     */
+    public Bateau(int idTransport) {
+        super(idTransport);
     }
 
     /**

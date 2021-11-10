@@ -1,4 +1,4 @@
-package fr.uphf.etu.structure;
+package fr.uphf.etu.flotte;
 
 /**
  *
@@ -10,8 +10,25 @@ package fr.uphf.etu.structure;
  *
  **/
 public class Transport {
-    private int idTransport;
+    private final int idTransport;
     private int taille;
+
+
+    /**
+     * Constructeur vide
+     */
+    public Transport() {
+        this.idTransport = (int) (Math.random() * (100 - 1));//RandomStringUtils.random(8, "0123456789abcdef");
+    }
+
+    /**
+     * Constructeur à un paramètre
+     *
+     * @param idTransport identifiant de ce transport
+     */
+    public Transport(int idTransport) {
+        this.idTransport = idTransport;
+    }
 
     /**
      * Constructeur à deux paramètres
@@ -21,16 +38,6 @@ public class Transport {
      */
     public Transport(int idTransport, int taille) {
         this.idTransport = idTransport;
-        this.taille = taille;
-    }
-
-    /**
-     * Constructeur à un paramètre
-     *
-     * @param taille surface du transport en m³
-     */
-    public Transport(int taille) {
-        this.idTransport = (int) (Math.random() * (100 - 1));//RandomStringUtils.random(8, "0123456789abcdef");
         this.taille = taille;
     }
 

@@ -1,2 +1,5 @@
-Nb	Type
+Id	Type
 5	barge
+4	camion
+5	train
+1	camion

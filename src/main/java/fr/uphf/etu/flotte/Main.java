@@ -1,6 +1,4 @@
-package fr.uphf.etu.structure;
-
-import fr.uphf.etu.exception.IdentifiantTransportDejaExistant;
+package fr.uphf.etu.flotte;
 
 /**
  *
@@ -14,7 +12,7 @@ import fr.uphf.etu.exception.IdentifiantTransportDejaExistant;
 public class Main {
     public static void main(String[] args) {
 
-        Flotte flotte = new Flotte();
+        /*Flotte flotte = new Flotte();
 
         Camion c1 = new Camion(50);
         System.out.println("Bateau Test 1 :");
@@ -40,8 +38,12 @@ public class Main {
             e.printStackTrace();
         }
 
-        flotte.enregistrerFlotte(1);
+        flotte.enregistrerFlotte(1);*/
 
-        //System.out.println(flotte.getFlotte().get(0).getIdTransport());
+
+        Flotte flotte = new Flotte();
+        flotte.lireFlotte("src\\main\\resources\\1_flotte.txt");
+        flotte.afficherFlotte();
+
     }
 }
