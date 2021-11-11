@@ -23,6 +23,7 @@ import java.util.List;
 public class Topologie {
     private List<Noeud> noeuds = new ArrayList<>();
     private List<Service> services = new ArrayList<>();
+    private List<Demande> demandes = new ArrayList<>();
 
     /**
      * Constructeur vide
@@ -48,6 +49,19 @@ public class Topologie {
     public Topologie(List<Noeud> noeuds, List<Service> services) {
         this.noeuds = noeuds;
         this.services = services;
+    }
+
+    /**
+     * Constructeur avec 3 paramètres
+     *
+     * @param noeuds la liste des noeuds
+     * @param services la liste des services
+     * @param demandes la liste des demandes
+     */
+    public Topologie(List<Noeud> noeuds, List<Service> services, List<Demande> demandes) {
+        this.noeuds = noeuds;
+        this.services = services;
+        this.demandes = demandes;
     }
 
     /**
@@ -158,8 +172,50 @@ public class Topologie {
                     }
                 }
                 Service nouveauService = new Service(Integer.parseInt(mots[0]),Integer.parseInt(mots[1]),nouvelleRoute);
-                nouveauService.afficherService();
                 services.add(nouveauService);
+            }
+            fr.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     *Lit un fichier texte de demandes
+     *
+     * @param cheminFichier chemin du Fichier texte
+     */
+    public void lireDemandes(String cheminFichier) {
+        try {
+            File file = new File(cheminFichier);
+
+            FileReader fr = new FileReader(file);
+            BufferedReader br = new BufferedReader(fr);
+            String line = br.readLine();
+            while((line = br.readLine()) != null)
+            {
+                String[] mots = line.split("\t",4);
+                String[] noeuds_demande = mots[1].split(", ");
+                String[] heures_demande = mots[2].split(", ");
+                List<Arc> nouvelleRoute = new ArrayList<>();
+
+                boolean trouver = false;
+                for(Noeud noeudDepart : noeuds)
+                {
+                    if(noeudDepart.getLettre() == noeuds_demande[0].charAt(0))
+                    {
+                        for(Noeud noeudArrivee : noeuds)
+                        {
+                            if(noeudArrivee.getLettre() == noeuds_demande[1].charAt(0))
+                            {
+                                Demande nouvelleDemande = new Demande(Integer.parseInt(mots[0]),noeudDepart,noeudArrivee,Integer.parseInt(heures_demande[0]),Integer.parseInt(heures_demande[1]),Integer.parseInt(mots[3]));
+                                demandes.add(nouvelleDemande);
+                                trouver = true;
+                                break;
+                            }
+                        }
+                    }
+                }
             }
             fr.close();
         } catch (IOException e) {
@@ -204,13 +260,23 @@ public class Topologie {
         );
     }
 
+    /**
+     * Affiche les services
+     */
     public void afficherServices() {
         System.out.println("ID\tCapacity\tRoute");
         services.forEach(
-                s -> {
-                    s.afficherService();
-                    System.out.println();
-                }
+                Service::afficherService
+        );
+    }
+
+    /**
+     * Affiche les demandes
+     */
+    public void afficherDemandes() {
+        System.out.println("ID\tD-A\tDt-At\tVolume");
+        demandes.forEach(
+                Demande::afficherDemande
         );
     }
 }

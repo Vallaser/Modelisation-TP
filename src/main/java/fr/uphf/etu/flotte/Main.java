@@ -51,6 +51,8 @@ public class Main {
         topologie.lireTopologie("src\\main\\resources\\1_topologie.txt");
         topologie.afficherTopologie();
         topologie.lireServices("src\\main\\resources\\1_services.txt");
-        //topologie.afficherServices();
+        topologie.afficherServices();
+        topologie.lireDemandes("src\\main\\resources\\1_demandes.txt");
+        topologie.afficherDemandes();
     }
 }
