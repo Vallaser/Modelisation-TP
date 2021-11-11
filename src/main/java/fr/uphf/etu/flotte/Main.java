@@ -50,5 +50,7 @@ public class Main {
         Topologie topologie = new Topologie();
         topologie.lireTopologie("src\\main\\resources\\1_topologie.txt");
         topologie.afficherTopologie();
+        topologie.lireServices("src\\main\\resources\\1_services.txt");
+        //topologie.afficherServices();
     }
 }
