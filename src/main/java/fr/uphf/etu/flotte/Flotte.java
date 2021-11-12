@@ -56,19 +56,18 @@ public class Flotte {
      */
     public void lireFlotte(String cheminFichier) {
         try {
-
             File file = new File(cheminFichier);
-
             FileReader fr = new FileReader(file);
             BufferedReader br = new BufferedReader(fr);
-            String line = br.readLine();
+            br.readLine();
+            String line;
             while((line = br.readLine()) != null)
             {
                 String[] mots = line.split("\t",2);
                 line = line.substring(mots[0].length());
                 while(line.charAt(0) == '\t')
                 {
-                    line = line.substring(1,line.length());
+                    line = line.substring(1);
                 }
 
                 if(line.equals("barge"))
@@ -165,6 +164,9 @@ public class Flotte {
         return flotte;
     }
 
+    /**
+     * Affiche la flotte
+     */
     public void afficherFlotte() {
         System.out.println("Id\tType");
         flotte.forEach(
@@ -184,6 +186,4 @@ public class Flotte {
             }
         );
     }
-
-
 }

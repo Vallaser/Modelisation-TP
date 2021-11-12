@@ -16,6 +16,7 @@ public class Demande {
     private int heureDepart;
     private int heureArrivee;
     private int volume;
+    private Noeud position = null;
 
     /**
      * Constructeur vide
@@ -63,6 +64,15 @@ public class Demande {
         this.heureDepart = heureDepart;
         this.heureArrivee = heureArrivee;
         this.volume = volume;
+    }
+
+    /**
+     * Modifie la position de la demande
+     *
+     * @param position de la demande
+     */
+    public void setPosition(Noeud position) {
+        this.position = position;
     }
 
     /**
@@ -120,12 +130,20 @@ public class Demande {
     }
 
     /**
+     * Retourne la position de la demande
+     *
+     * @return la position de la demande
+     */
+    public Noeud getPosition() { return position; }
+
+    /**
      * Affiche l'identifiant de la demande
      */
     public void afficherIdDemande()
     {
         System.out.print(idDemande);
     }
+
 
     /**
      * Affiche le Noeud de départ et d'arrivée
@@ -154,6 +172,11 @@ public class Demande {
     }
 
     /**
+     * Affiche la position de la demande
+     */
+    public void affichePosition() { System.out.print(position.getLettre());}
+
+    /**
      * Affiche la demande
      */
     public void afficherDemande()
@@ -165,6 +188,9 @@ public class Demande {
         afficherHeures();
         System.out.print("\t");
         afficherVolume();
+        System.out.print("\t");
+        affichePosition();
         System.out.println();
+
     }
 }

@@ -75,7 +75,8 @@ public class Topologie {
 
             FileReader fr = new FileReader(file);
             BufferedReader br = new BufferedReader(fr);
-            String line = br.readLine();
+            br.readLine();
+            String line;
             while((line = br.readLine()) != null)
             {
                 String[] mots = line.split("\t",2);
@@ -86,21 +87,17 @@ public class Topologie {
                 }
                 String[] lettres = line.split(" ");
                 List<Noeud> liens = new ArrayList<>();
-                for(int i=0;i<lettres.length;i++)
-                {
+                for (String lettre : lettres) {
                     boolean trouver = false;
-                    for(Noeud noeud : noeuds)
-                    {
-                        if(noeud.getLettre() == lettres[i].charAt(0))
-                        {
+                    for (Noeud noeud : noeuds) {
+                        if (noeud.getLettre() == lettre.charAt(0)) {
                             liens.add(noeud);
                             trouver = true;
                             break;
                         }
                     }
-                    if(!trouver)
-                    {
-                        Noeud nouveauNoeud = new Noeud(lettres[i].charAt(0));
+                    if (!trouver) {
+                        Noeud nouveauNoeud = new Noeud(lettre.charAt(0));
                         noeuds.add(nouveauNoeud);
                         liens.add(nouveauNoeud);
                     }
@@ -139,34 +136,29 @@ public class Topologie {
 
             FileReader fr = new FileReader(file);
             BufferedReader br = new BufferedReader(fr);
-            String line = br.readLine();
+            br.readLine();
+            String line;
             while((line = br.readLine()) != null)
             {
                 line = line.substring(0,line.length()-1);
                 String[] mots = line.split("\t",3);
                 String[] arcs = mots[2].split("; ");
                 List<Arc> nouvelleRoute = new ArrayList<>();
-                for(int i=0;i<arcs.length;i++)
-                {
-                    String[] depart_arrivee = arcs[i].split(", ");
+                for (String arc : arcs) {
+                    String[] depart_arrivee = arc.split(", ");
                     boolean trouver = false;
-                    for(Noeud noeudDepart : noeuds)
-                    {
-                        if(noeudDepart.getLettre() == depart_arrivee[0].charAt(0))
-                        {
-                            for(Noeud noeudArrivee : noeuds)
-                            {
-                                if(noeudArrivee.getLettre() == depart_arrivee[1].charAt(0))
-                                {
-                                    Arc nouvelArc = new Arc(noeudDepart,noeudArrivee,Integer.parseInt(depart_arrivee[0].substring(1)),Integer.parseInt(depart_arrivee[1].substring(1)));
+                    for (Noeud noeudDepart : noeuds) {
+                        if (noeudDepart.getLettre() == depart_arrivee[0].charAt(0)) {
+                            for (Noeud noeudArrivee : noeuds) {
+                                if (noeudArrivee.getLettre() == depart_arrivee[1].charAt(0)) {
+                                    Arc nouvelArc = new Arc(noeudDepart, noeudArrivee, Integer.parseInt(depart_arrivee[0].substring(1)), Integer.parseInt(depart_arrivee[1].substring(1)));
                                     nouvelleRoute.add(nouvelArc);
                                     trouver = true;
                                     break;
                                 }
                             }
                         }
-                        if(trouver)
-                        {
+                        if (trouver) {
                             break;
                         }
                     }
@@ -191,13 +183,13 @@ public class Topologie {
 
             FileReader fr = new FileReader(file);
             BufferedReader br = new BufferedReader(fr);
-            String line = br.readLine();
+            br.readLine();
+            String line;
             while((line = br.readLine()) != null)
             {
                 String[] mots = line.split("\t",4);
                 String[] noeuds_demande = mots[1].split(", ");
                 String[] heures_demande = mots[2].split(", ");
-                List<Arc> nouvelleRoute = new ArrayList<>();
 
                 boolean trouver = false;
                 for(Noeud noeudDepart : noeuds)
@@ -215,6 +207,10 @@ public class Topologie {
                             }
                         }
                     }
+                    if(trouver)
+                    {
+                        break;
+                    }
                 }
             }
             fr.close();
@@ -222,8 +218,7 @@ public class Topologie {
             e.printStackTrace();
         }
     }
-
-
+    
     /**
      * Retourne la liste des noeuds
      *
@@ -274,7 +269,7 @@ public class Topologie {
      * Affiche les demandes
      */
     public void afficherDemandes() {
-        System.out.println("ID\tD-A\tDt-At\tVolume");
+        System.out.println("ID\tD-A\tDt-At\tVolume\tPosition");
         demandes.forEach(
                 Demande::afficherDemande
         );

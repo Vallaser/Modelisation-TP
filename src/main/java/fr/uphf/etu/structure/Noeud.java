@@ -12,7 +12,7 @@ import java.util.List;
  *
  **/
 public class Noeud {
-    private char lettre;
+    private final char lettre;
     private List<Noeud> liens;
 
     /**
